@@ -2,10 +2,10 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass armenian-article
+\textclass paper
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language canadian
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -26,7 +26,16 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize default
 \use_geometry false
 \use_amsmath 1
@@ -65,25 +74,54 @@ Project 1 Proposal
 \end_layout
 
 \begin_layout Author
-Cole Fichter, Jason Huang, Rahmat Saeedi
-\end_layout
-
-\begin_layout Section*
-TODO: Write this!
+Cole Fichter, Rahmat Saeedi, Jason Hwang
 \end_layout
 
 \begin_layout Standard
-If you can read this, you're doing well.
- Look for the 
-\begin_inset Quotes eld
+We have chosen Project Scheduling, so the main question we aim to answer
+ is how best to assign a varied workload to office employees of differing
+ skill levels in such a way that the work is completed in the shortest time
+ possible.
+ Such a problem is applicable to many corporate scenarios in which diverse
+ tasks need to be assigned to a group of employees in a prudent and efficient
+ manner.
+\end_layout
+
+\begin_layout Standard
+We expect that there will be a few unstated constraints.
+ For example, it seems reasonable to assume that the company would not want
+ employees to be idle for long periods of time, and that there will be reasonabl
+e limits upon how long an employee can work in any given day.
+ After solving the general problem, we hope to be able to explore these
+ more concrete issues to provide specific guidance to management about how
+ best to perform day-to-day scheduling operations.
+\end_layout
+
+\begin_layout Standard
+We expect that our references will include materials posted on eClass, the
+ recommended (optional) text book, Operations Research Principles and Practice
+ by Pradeep Pai, and perhaps other sources.
+ All references will be properly documented in the bibliography of our report.
+\end_layout
+
+\begin_layout Standard
+On the surface, our problem appears to be a fairly-typical linear programming
+ problem.
+ We intend to follow the methods presented in class, with the assistance
+ of computer algebra programs such as Maple, Matlab, Python, R, or others.
+ Our final report will be typeset using LaTeX.
+ We have set up a GitHub repository for our project deliverables at 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://github.com/colefichter/math372_project_1
+\end_layout
+
 \end_inset
 
-View PDF
-\begin_inset Quotes erd
-\end_inset
-
- button at the far left of the toolbar (above) to see how this document
- looks in it's final typeset format.
+ to facilitate distributed collaboration.
 \end_layout
 
 \end_body
