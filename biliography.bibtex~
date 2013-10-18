@@ -1,0 +1,7 @@
+@Book{pai,
+ author    = "Pradeep Prabhakar Pai",
+ title     = "Operations Research: Principles and Practice",
+ publisher = "Oxford University Press",
+ year      =  2012,
+ address   = "New Delhi"
+}

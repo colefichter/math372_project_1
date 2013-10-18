@@ -1,0 +1,30 @@
+@Book{pai2008,
+ author    = "Pai, Pradeep Prabhakar",
+ title     = "Operations Research: Principles and Practice",
+ publisher = "Oxford University Press",
+ year      =  2012,
+ address   = "New Delhi"
+}
+@Book{petzold2008,
+ author	= "Petzold, Charles",
+ title = "The Annotated Turing",
+ publisher = "Wiley Publishing",
+ year = 2008,
+ address = "Indianapolis"
+}
+@Book{lay2006,
+ author	= "Lay, David C.",
+ title = "Linear Algebra and Its Applications",
+ publisher = "Pearson Education",
+ year = 2006,
+ edition = "3rd",
+ address = "Indianapolis"
+}
+@Book{budiansky2006,
+ author	= "Budiansky, Stephen",
+ title = "Blackett's War: The Men Who Defeated the Nazi U-Boats and Brought Science to the Art of Warfare",
+ publisher = "Knopf",
+ year = 2013,
+ address = "Toronto"
+}
+
