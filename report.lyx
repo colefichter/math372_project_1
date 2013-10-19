@@ -470,11 +470,7 @@ The insurance company has compiled the timings above by empirical measurement.
  by the office employees.
  Under these circumstances, the insurance company is interested in assigning
  some fraction of the incoming tasks to each employee so as to minimize
- the 
-\noun on
-makespan
-\noun default
-, or the elapsed time required to finish all of the tasks.
+ the makespan, or the elapsed time required to finish all of the tasks.
 \end_layout
 
 \begin_layout Subsection
@@ -1109,7 +1105,7 @@ Observations of the Basic Solution
 \end_layout
 
 \begin_layout Standard
-First, note that our solution is only useful in the long-term.
+Our solution is only useful in the long-term.
  It wouldn't make sense to assign 0.6% of a single task to one employee.
  In addition to being impractical, the cost of context-switching as the
  employees handed off the partially completed task would outweigh any potential
@@ -1157,7 +1153,7 @@ We can examine this question by removing one employee at a time from the
  scheduling model, then running the Simplex Minimization algorithm again
  on the augmented model.
  This results in three new solutions (one for each ill employee) which can
- be compared to determine ill worker has the greatest impact on overall
+ be compared to determine which ill worker has the greatest impact on overall
  office productivity.
  Here we see the solutions to each augmented model.
 \end_layout
@@ -1429,8 +1425,8 @@ While sick time for any of the employees has a clear negative impact on
 \end_inset
 
 , to process a task increases) we can spot some differences.
- The impact of sick time by Employees 1 and 3 have roughly the same affect
- on the makespan, 
+ Sick time by Employees 1 and 3 has roughly the same affect on the makespan,
+ 
 \begin_inset Formula $t$
 \end_inset
 
@@ -1438,15 +1434,20 @@ While sick time for any of the employees has a clear negative impact on
  low.
  Thus, from the insurance company's point of view, if any one employee should
  get sick, it would be preferable that employee 2 becomes ill.
- Therefore, management could mitigate the risk at the least cost by offering
+ Therefore, management could mitigate the risk, at the least cost, by offering
  only Employees 1 and 3 extra preventative health care coverage such as
  seasonal flu vaccinations.
 \end_layout
 
 \begin_layout Standard
-With these results on hand, management would also be able to confidently
- predict the adjusted company-wide productivity and adjust deadlines, if
- necessary, as soon as they get news that an employee has taken ill.
+These results also suggest that Employee 2 may be the least productive member
+ of the team.
+\end_layout
+
+\begin_layout Standard
+With these findings on hand, management would be able to confidently predict
+ the adjusted company-wide productivity and adjust deadlines, if necessary,
+ as soon as they get news that an employee has taken ill.
 \end_layout
 
 \begin_layout Standard
