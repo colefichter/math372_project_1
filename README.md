@@ -1,10 +1,18 @@
 math372_project_1
 =================
 
-Source code and report files for Math 372 Project 1
+Source code and report files for Math 372 Project 1, The Employee Scheduling Project.
 
-## This repository will help us work as a distributed team without stepping on each other's toes.
+Authors:
 
-If you don't know how to use Git, you might want to google a quick tutorial. I recommend you use the Github client http://mac.github.com/ or http://windows.github.com/.
+* Cole Fichter
+* Rahmat Saeedi
+* Jason Hwang
 
-Also, I propose that we typeset the report using [Lyx](http://www.lyx.org/). It's a GUI for LaTex, and it works really well on any platform.
+The files report.lyx and report.pdf contain the final project report document.
+
+Various other files including spreadsheets, Maple worksheets, and others are available to browse as you please.
+
+
+
+
