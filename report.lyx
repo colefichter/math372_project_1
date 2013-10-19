@@ -1136,6 +1136,320 @@ Enhanced Employee Scheduling Problems
 \end_layout
 
 \begin_layout Standard
+The insurance company may be interested to learn how the Basic Solution
+ reacts to other real-world conditions.
+\end_layout
+
+\begin_layout Subsection
+Employee Sick Time
+\end_layout
+
+\begin_layout Standard
+Suppose that one of the employees becomes ill and cannot work.
+ How would that affect the Basic Model? Does it matter which employee becomes
+ ill? The answers to these questions could help management determine which
+ employees to target with extra preventative health and wellness benefits
+ (perhaps free flu vaccinations, or similar).
+\end_layout
+
+\begin_layout Standard
+We can examine this question by removing one employee at a time from the
+ scheduling model, then running the Simplex Minimization algorithm again
+ on the augmented model.
+ This results in three new solutions (one for each ill employee) which can
+ be compared to determine ill worker has the greatest impact on overall
+ office productivity.
+ Here we see the solutions to each augmented model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sick Employee
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ values
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ values
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+ value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{2}=1$
+\end_inset
+
+, 
+\begin_inset Formula $p_{3}=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{2}=3/40$
+\end_inset
+
+, 
+\begin_inset Formula $q_{3}=37/40$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $333/20\approx16.65$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $p_{3}=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{1}=4/23$
+\end_inset
+
+, 
+\begin_inset Formula $q_{3}=19/23$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $342/23\approx14.870$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}=1$
+\end_inset
+
+, 
+\begin_inset Formula $p_{2}=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{1}=6/25$
+\end_inset
+
+, 
+\begin_inset Formula $q_{2}=19/25$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $418/25\approx16.72$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Solutions to the Employee Sick Time Model
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:employeesicktimesolutions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While sick time for any of the employees has a clear negative impact on
+ the processing time (that is, the elapsed time, 
+\begin_inset Formula $t$
+\end_inset
+
+, to process a task increases) we can spot some differences.
+ The impact of sick time by Employees 1 and 3 have roughly the same affect
+ on the makespan, 
+\begin_inset Formula $t$
+\end_inset
+
+, whereas when Employee 2 is ill we see that the overall impact is comparatively
+ low.
+ Thus, from the insurance company's point of view, if any one employee should
+ get sick, it would be preferable that employee 2 becomes ill.
+ Therefore, management could mitigate the risk at the least cost by offering
+ only Employees 1 and 3 extra preventative health care coverage such as
+ seasonal flu vaccinations.
+\end_layout
+
+\begin_layout Standard
+With these results on hand, management would also be able to confidently
+ predict the adjusted company-wide productivity and adjust deadlines, if
+ necessary, as soon as they get news that an employee has taken ill.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
