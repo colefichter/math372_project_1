@@ -112,10 +112,9 @@ effectively
 \emph default
  allocating finite resources has been known for centuries.
  Certainly, as long as there have been functional economies (even systems
- as simple as barter networks), producers have been pressured to utilize
+ as simple as barter networks) producers have been pressured to utilize
  labour, capital, and raw materials in the most efficient manner possible.
- More generally, there exist an entire class of problems known as Assignment
- Problems.
+ More generally, there exist a class of problems known as Assignment Problems.
  
 \end_layout
 
@@ -141,7 +140,7 @@ key "pai2008"
  This could mean assigning workers of various skill levels to machines in
  a factory, scheduling specific types of products to be produced on assembly
  lines of varying capacity, reducing change-over and re-tooling costs during
- production, and many other problems.
+ production, or many other problems.
  In this paper, we examine the problem of assigning a varied workload of
  tasks to a group of employees of varying skill levels in such a way that
  we minimize the elapsed time, commonly referred to as the 
@@ -165,7 +164,7 @@ Historical Context
 
 \begin_layout Standard
 While people have encountered Assignment Problems for at least several centuries
-, we lacked the tools to effectively tackle them, especially in the general
+, they lacked the tools to effectively tackle them, especially in the general
  sense, until fairly recently.
  Indeed, neither the Renaissance nor the Industrial Revolution produced
  the necessary confluence of applied and theoretical mathematics and advanced
@@ -279,10 +278,14 @@ key "budiansky2006"
  the post-war surge in operations research work.
  Such work would eventually lead to minor business revolutions like lean
  manufacturing and its offshoot, agile software development.
- It was during these decades of rapid technological advancement that the
+ 
+\end_layout
+
+\begin_layout Standard
+It was during these decades of rapid technological advancement that the
  mathematical modelling techniques used in this paper were refined.
  Fortunately for the authors, we now live in a time where complex mathematical
- models can be effortlessly solved with any mediocre personal computer.
+ models can be effortlessly solved with even a mediocre personal computer.
 \end_layout
 
 \begin_layout Section
@@ -461,7 +464,7 @@ name "table:averagetimes"
 \end_layout
 
 \begin_layout Standard
-The company has compiled the timings above by empirical measurement.
+The insurance company has compiled the timings above by empirical measurement.
  We assume that the company has a healthy business and, therefore, that
  there is a steady stream of New Policy and Claim tasks that require processing
  by the office employees.
@@ -881,7 +884,7 @@ Solving the Basic Employee Scheduling Model
 
 \begin_layout Standard
 The basic model described above is well-suited to the Simplex Minimization
- approach, and requires little modification.
+ algorithm, and requires little modification.
  We set up and solved the model in a spreadsheet, seen here.
 \end_layout
 
@@ -982,7 +985,7 @@ Claim Assignments
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $p_{1}=\frac{333}{335}\approx0.994$
+\begin_inset Formula $p_{1}=333/335\approx0.994$
 \end_inset
 
 
@@ -1008,7 +1011,7 @@ Claim Assignments
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $p_{2}=\frac{2}{335}\approx0.006$
+\begin_inset Formula $p_{2}=2/335\approx0.006$
 \end_inset
 
 
@@ -1020,7 +1023,7 @@ Claim Assignments
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $q_{2}=\frac{30}{67}\approx0.448$
+\begin_inset Formula $q_{2}=30/67\approx0.448$
 \end_inset
 
 
@@ -1046,7 +1049,7 @@ Claim Assignments
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $q_{3}=\frac{37}{67}\approx0.552$
+\begin_inset Formula $q_{3}=37/67\approx0.552$
 \end_inset
 
 
@@ -1106,7 +1109,20 @@ Observations of the Basic Solution
 \end_layout
 
 \begin_layout Standard
-Although no 
+First, note that our solution is only useful in the long-term.
+ It wouldn't make sense to assign 0.6% of a single task to one employee.
+ In addition to being impractical, the cost of context-switching as the
+ employees handed off the partially completed task would outweigh any potential
+ time savings.
+ Rather, our scheduling solution would be better applied to a large list
+ of tasks.
+ For example, if the office had a long backlog of work (say, several hundred
+ tasks) or if the insurance company is busy (and healthy), receiving a constant
+ and fairly steady stream of work every day for the foreseeable future.
+\end_layout
+
+\begin_layout Standard
+It is interesting to note that, while no 
 \emph on
 individual
 \emph default
