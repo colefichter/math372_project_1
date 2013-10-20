@@ -2327,6 +2327,7 @@ name "figure:minimumtimeasfunctioofproductivity-1"
 \end_layout
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 \begin_layout Section
 Conclusion
 \end_layout
@@ -2336,11 +2337,16 @@ An enhanced model that would represent the real world should be a probabilistic
  model rather than deterministic that would take into account employee's
  sick and vacation time...
 =======
+=======
+>>>>>>> fcee2dc3f880b538c85f516c9b0aa6a68e8206ab
 \begin_layout Standard
 From our analysis, the insurance company would achieve the best outcome
  by allocating their limited professional development budget towards Employee
  3, whose improvement would have the greatest positive impact on task processing
  times.
+<<<<<<< HEAD
+>>>>>>> fcee2dc3f880b538c85f516c9b0aa6a68e8206ab
+=======
 >>>>>>> fcee2dc3f880b538c85f516c9b0aa6a68e8206ab
 \end_layout
 
