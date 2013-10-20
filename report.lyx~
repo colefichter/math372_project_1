@@ -1128,7 +1128,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cnstraint
+Constraint
 \end_layout
 
 \end_inset
@@ -1238,13 +1238,13 @@ We see that the basic model is slightly more sensitive to the constraint
 
 , the fraction of Claim tasks assigned, since that constraint has the higher
  shadow price.
- We beleive that this is caused because the average time it takes for any
+ We believe that this is caused because the average time it takes for any
  employee to handle a Claim task is higher than the average time to process
  a New Policy task.
  Thus, the insurance company may be able to streamline its operation by
  finding ways to reduce the time it takes to process a Claim task.
  Such strategies might include more employee training, process automation,
- or improvments in electronic record keeping systems
+ or improvements in electronic record keeping systems
 \end_layout
 
 \begin_layout Subsection
@@ -1635,13 +1635,12 @@ Employee Training
 \begin_layout Standard
 Oftentimes, companies train their employees to increase efficiency and productiv
 ity.
- Moreover, even though if unlimited resources were available it would have
- been better for the companies to train all their employees in all aspect
- of the corporation, but they often select a subset of the employees to
- train in a specialized aspect of the corporation.
- To model a similar problem for our fictional insurance company, we assume
- that the company could train only one of its employees and hope to reduce
- the total time needed to complete New Policy and Claim applications.
+ Moreover, since professional development budgets are often limited, the
+ company may wish to offer training to only a subset of its employees.
+ To model a similar problem for our insurance company, we assume that the
+ company has a budget for training only one of its employees with the aim
+ still to reduce the total time needed to complete New Policy and Claim
+ tasks.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1649,13 +1648,19 @@ Employee Selection Criteria
 \end_layout
 
 \begin_layout Standard
-Percent increased efficiency of a given employees depend on the learning
- curve of that individual and certainly it depend on the suitability of
- the training curriculum and the length of the training.
+Percent increased efficiency of a given employee depends on the learning
+ curve of that individual and, certainly, on the suitability of the training
+ curriculum and the length of the training.
  The simplest scenario would be to assume that all the employees have the
  same linear learning curve and that the curriculum would be the same for
  all employees.
- As a result, it is reasonable to conclude that no matter which employee
+ This assumption seems reasonable since there are few quantitative metrics
+ available that would measure an individuals potential suitability to a
+ training program.
+\end_layout
+
+\begin_layout Standard
+As a result, it is reasonable to conclude that no matter which employee
  is chosen, the employee would become more efficient by the same percentage.
  Let’s assume that an employee would become 10% more efficient upon completion
  of the training.
@@ -1670,10 +1675,10 @@ Methodology and Outcome
 Mathematically, the solution to this problem is the same as solving the
  basic model after replacing for the enhanced task completion time of the
  trained employee.
- Hence, this methodology requires solving the basic model 3 times, once
- per employee, and selecting the employee who yields a better result for
- the training.
- 
+ Hence, this methodology requires solving the Basic Model 3 times, once
+ per employee, and selecting the employee who yields a larger effect on
+ the predicted company-wide makespan.
+ Here we see the revised task completion times for each employee.
 \end_layout
 
 \begin_layout Standard
@@ -1734,7 +1739,10 @@ Claims
 \begin_inset Text
 
 \begin_layout Plain Layout
-10/1.1
+\begin_inset Formula $10/1.1\approx9.09$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1743,7 +1751,10 @@ Claims
 \begin_inset Text
 
 \begin_layout Plain Layout
-28/1.1
+\begin_inset Formula $28/1.1\approx25.45$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1763,7 +1774,10 @@ Claims
 \begin_inset Text
 
 \begin_layout Plain Layout
-15/1.1
+\begin_inset Formula $15/1.1\approx13.64$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1772,7 +1786,10 @@ Claims
 \begin_inset Text
 
 \begin_layout Plain Layout
-22/1.1
+\begin_inset Formula $22/1.1\approx20$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1792,7 +1809,10 @@ Claims
 \begin_inset Text
 
 \begin_layout Plain Layout
-13/1.1
+\begin_inset Formula $13/1.1\approx11.82$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1801,7 +1821,10 @@ Claims
 \begin_inset Text
 
 \begin_layout Plain Layout
-18/1.1
+\begin_inset Formula $18/1.1\approx16.36$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1840,16 +1863,24 @@ name "table:employeetrainingesetup"
 \end_layout
 
 \begin_layout Standard
-Upon creating a Maple routine that solved the basic model, we found that
- training employee 3 would yield the shortest time, 
+Upon using Maple to compute the revised solutions, we found that training
+ Employee 3 would yield the shortest makespan, 
 \begin_inset Formula $t$
 \end_inset
 
 .
- In addition, upon the training completion, employee 1 would be assigned
- a 3.2% lesser New Policies while employee 2 would be assigned 5.3 times previousl
-y assigned New Policies.
- 
+ In addition, upon the training completion, Employee 1 would be assigned
+ 3.2% fewer New Policy tasks while Employee 2 would be assigned 5.3 times
+ as many New Policy tasks, when compared with the Basic Model results in
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:basicmodeloptimalsolution"
+
+\end_inset
+
+.
+ Here we see the details of the revised solutions.
 \end_layout
 
 \begin_layout Standard
@@ -2112,8 +2143,8 @@ Employee
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Task division and completion time upon an employee complete training, assuming
- the selected employee would be 10% more productive
+Revised assignment schedule, assuming a 10% productivity boost for the trained
+ employee
 \end_layout
 
 \end_inset
@@ -2214,6 +2245,16 @@ name "figure:minimumtimeasfunctioofproductivity-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+From our analysis, the insurance company would achieve the best outcome
+ by allocating their limited professional development budget towards Employee
+ 3, whose improvement has the greatest positive impact on task processing
+ times.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
