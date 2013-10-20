@@ -1128,7 +1128,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cnstraint
+Constraint
 \end_layout
 
 \end_inset
@@ -1238,13 +1238,13 @@ We see that the basic model is slightly more sensitive to the constraint
 
 , the fraction of Claim tasks assigned, since that constraint has the higher
  shadow price.
- We beleive that this is caused because the average time it takes for any
+ We believe that this is caused because the average time it takes for any
  employee to handle a Claim task is higher than the average time to process
  a New Policy task.
  Thus, the insurance company may be able to streamline its operation by
  finding ways to reduce the time it takes to process a Claim task.
  Such strategies might include more employee training, process automation,
- or improvments in electronic record keeping systems
+ or improvements in electronic record keeping systems
 \end_layout
 
 \begin_layout Subsection
