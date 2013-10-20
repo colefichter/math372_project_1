@@ -1101,6 +1101,153 @@ With this optimal solution, we find resulting optimal makespan is
 \end_layout
 
 \begin_layout Subsection
+Sensitivity Analysis
+\end_layout
+
+\begin_layout Standard
+From a sensitivity analysis prepared with the basic model solution, we see
+ the shadow prices for our two most important constraints.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cnstraint
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Shadow Price
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}+p_{2}+p_{3}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.0299$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{1}+q_{2}+q_{3}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.9104$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Constraint shadow prices
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:constraintshadowprices"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that the basic model is slightly more sensitive to the constraint
+ 
+\begin_inset Formula $q_{1}+q_{2}+q_{3}=1$
+\end_inset
+
+, the fraction of Claim tasks assigned, since that constraint has the higher
+ shadow price.
+ We beleive that this is caused because the average time it takes for any
+ employee to handle a Claim task is higher than the average time to process
+ a New Policy task.
+ Thus, the insurance company may be able to streamline its operation by
+ finding ways to reduce the time it takes to process a Claim task.
+ Such strategies might include more employee training, process automation,
+ or improvments in electronic record keeping systems
+\end_layout
+
+\begin_layout Subsection
 Observations of the Basic Solution
 \end_layout
 
@@ -1141,7 +1288,7 @@ reference "table:averagetimes"
 
 \end_inset
 
- are truely accurate.
+ are truly accurate.
  How were they measured? Are they an accurate reflection of true employee
  work times?
 \end_layout
@@ -1150,15 +1297,15 @@ reference "table:averagetimes"
 Next, it is very possible that a linear model, such as our basic model,
  is not an accurate representation of of real world worker productivity.
  For example, the authors believe that it is fairly unlikely that an employee's
- productivity would remain constaint throughout the day (let alone over
+ productivity would remain constraint throughout the day (let alone over
  weeks, months, or years).
  Our model does not take into account any aspect of productivity fluctuations
  caused by factors such as fatigue, boredom, enthusiasm, etc.
 \end_layout
 
 \begin_layout Standard
-The authors also wonder wether such a scheduling strategy could foster animosity
- and politics between the employees.
+The authors also wonder whether such a scheduling strategy could foster
+ animosity and politics between the employees.
  We leave this as an open question for the reader.
 \end_layout
 
@@ -1521,7 +1668,7 @@ Methodology and Outcome
 
 \begin_layout Standard
 Mathematically, the solution to this problem is the same as solving the
- basic model after replacing for the enhanced task complition time of the
+ basic model after replacing for the enhanced task completion time of the
  trained employee.
  Hence, this methodology requires solving the basic model 3 times, once
  per employee, and selecting the employee who yields a better result for
@@ -1694,12 +1841,12 @@ name "table:employeetrainingesetup"
 
 \begin_layout Standard
 Upon creating a Maple routine that solved the basic model, we found that
- training employee 3 would yeild the shortest time, 
+ training employee 3 would yield the shortest time, 
 \begin_inset Formula $t$
 \end_inset
 
 .
- In addition, upon the training complition, employee 1 would be assigned
+ In addition, upon the training completion, employee 1 would be assigned
  a 3.2% lesser New Policies while employee 2 would be assigned 5.3 times previousl
 y assigned New Policies.
  
@@ -1965,7 +2112,7 @@ Employee
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Task division and complution time upon an employee complete training, assuming
+Task division and completion time upon an employee complete training, assuming
  the selected employee would be 10% more productive
 \end_layout
 
@@ -2010,7 +2157,7 @@ status open
 \begin_layout Plain Layout
 Minimum time as a function of percent increased in productivity of one of
  the employees.
- Red, blue, and black represent workers 1, 2, and 3 respectivly.
+ Red, blue, and black represent workers 1, 2, and 3 respectively.
 \end_layout
 
 \end_inset

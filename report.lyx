@@ -1101,6 +1101,153 @@ With this optimal solution, we find resulting optimal makespan is
 \end_layout
 
 \begin_layout Subsection
+Sensitivity Analysis
+\end_layout
+
+\begin_layout Standard
+From a sensitivity analysis prepared with the basic model solution, we see
+ the shadow prices for our two most important constraints.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constraint
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Shadow Price
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}+p_{2}+p_{3}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4.0299$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{1}+q_{2}+q_{3}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5.9104$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Constraint shadow prices
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:constraintshadowprices"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We see that the basic model is slightly more sensitive to the constraint
+ 
+\begin_inset Formula $q_{1}+q_{2}+q_{3}=1$
+\end_inset
+
+, the fraction of Claim tasks assigned, since that constraint has the higher
+ shadow price.
+ We believe that this is caused because the average time it takes for any
+ employee to handle a Claim task is higher than the average time to process
+ a New Policy task.
+ Thus, the insurance company may be able to streamline its operation by
+ finding ways to reduce the time it takes to process a Claim task.
+ Such strategies might include more employee training, process automation,
+ or improvements in electronic record keeping systems
+\end_layout
+
+\begin_layout Subsection
 Observations of the Basic Solution
 \end_layout
 
