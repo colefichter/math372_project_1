@@ -2327,7 +2327,7 @@ name "figure:minimumtimeasfunctioofproductivity-1"
 \end_layout
 
 \begin_layout Section
-Conclusion
+Conclusions
 \end_layout
 
 \begin_layout Standard
@@ -2341,10 +2341,6 @@ From our analysis, the insurance company would achieve the best outcome
  by allocating their limited professional development budget towards Employee
  3, whose improvement would have the greatest positive impact on task processing
  times.
-\end_layout
-
-\begin_layout Section
-Conclusions
 \end_layout
 
 \begin_layout Standard
@@ -2377,7 +2373,7 @@ name "sec:Appendix-A"
 \begin_layout Standard
 Rather than attach printed spreadsheets as an appendix, all of our project
  documents including spreadsheets, Maple source code, charts, and LaTeX
- files are available from our public repository, located at 
+ files are available at 
 \begin_inset CommandInset href
 LatexCommand href
 name "https://github.com/colefichter/math372_project_1"
