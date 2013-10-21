@@ -208,7 +208,7 @@ key "petzold2008"
 \begin_inset Quotes eld
 \end_inset
 
-opened the door to a new era in mathematical modeling [sic]
+opened the door to a new era in mathematical modelling [sic]
 \begin_inset Quotes erd
 \end_inset
 
@@ -838,11 +838,11 @@ The first two constraints ensure that all the tasks would be processed by
 \end_inset
 
 .
- In addition, any solution that does not satisfy the first two contrains
+ In addition, any solution that does not satisfy the first two contains
  corresponds to the case where not all of the tasks are assigned to employees
  and thus an unassigned portion of tasks would not be completed.
  The remaining other three constraints ensure that no employee exceeds the
- time requiered to complete all the tasks.
+ time required to complete all the tasks.
 \end_layout
 
 \begin_layout Subsubsection
@@ -897,14 +897,14 @@ reference "table:basicconstraints"
 \end_inset
 
  Since we are making no assumption on the number of policies and claims
- that needs to be processes, therfore, the objective function 
+ that needs to be processes, therefore, the objective function 
 \begin_inset Formula $t$
 \end_inset
 
- is not the same as the time in minutes requiered to complete all tasks.
+ is not the same as the time in minutes required to complete all tasks.
  In fact, since there is a steady, health, long (infinite) sequence of policies
  and claims that needs to be processed, therefore it would take infinite
- minutes to processess all the tasks.
+ minutes to processes all the tasks.
  On the positive side, the objective 
 \begin_inset Formula $t$
 \end_inset
@@ -1165,7 +1165,7 @@ Sensitivity Analysis
 \end_layout
 
 \begin_layout Standard
-From a sensitivity analysis obtained using excel's simplex Solver, we find,
+From a sensitivity analysis obtained using Excel’s simplex Solver, we find,
  as follows, the shadow prices for our two most important constraints.
 \end_layout
 
@@ -1174,7 +1174,7 @@ From a sensitivity analysis obtained using excel's simplex Solver, we find,
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1351,7 +1351,7 @@ reference "table:averagetimes"
 \end_inset
 
 .
- Additionally, a linear approximation of employees' average processing time
+ Additionally, a linear approximation of employee’s average processing time
  (
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1371,18 +1371,18 @@ reference "table:averagetimes"
 \end_layout
 
 \begin_layout Standard
-Additionally, The mdel does not take into account the ratio of policies
- and claims that need to be processed.
+Additionally, the model does not take into account the ratio of policies
+ and claims that need to be processed and assumes that there are an infinite
+ number of policies and claims at any given time that needs processing.
  It is very likely that the average number of policies and claims that need
- to be processed annually are not the same.
- For example, it it likly that there would be more policies that need to
- be processed and fewer claims.
+ to be processed annually are not the same, for example, there could be
+ more policies that need to be processed and fewer claims.
+ This means that the task division may not truly lead to the best strategy
+ for the given insurance company.
  To further dig into the probable complexity of this problem, we investigate
- some variation of this problem by introducing further or different constrains.
-\end_layout
-
-\begin_layout Standard
-The authors also wonder whether such a scheduling strategy could foster
+ some variation of this problem by introducing further or different constrains
+ and parameters.
+ The authors also wonder whether such a scheduling strategy could foster
  animosity and politics between the employees.
  We leave this as an open question for the reader.
 \end_layout
@@ -1395,6 +1395,548 @@ Enhanced Employee Scheduling Problems
 The insurance company may be interested to learn how the Basic Solution
  reacts to other real-world conditions.
  Here, we present 
+\end_layout
+
+\begin_layout Subsection
+Finite Number of Policies and Claims
+\end_layout
+
+\begin_layout Standard
+Oftentimes, companies contract projects that would be finished after a finite
+ steps.
+ For example, we could consider the scenario that the insurance company
+ contracted processing 500 new policies and 100 claims.
+ To solve this model, in addition to the constrains in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:basicconstraints"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:averagetimes"
+
+\end_inset
+
+we have included the following constrains:
+\begin_inset Formula $p_{i}$
+\end_inset
+
+,
+\begin_inset Formula $q_{i}\in\mathbb{\mathbb{N}}$
+\end_inset
+
+ and replaced the first two conditions in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:basicvariables"
+
+\end_inset
+
+with 
+\begin_inset Formula $p_{1}+p_{2}+p_{3}=500$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{1}+q_{2}+q_{3}=100$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Employee
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of Policies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of Claims
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processing Time (min)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+261
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2638
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+170
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2638
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+95
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2607
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Project
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Complition Time:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2638 Minutes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Finite number of policies and claims solution given 500 and 100, respectively,
+ policies and claims needs processing.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "table:finitestep500solution"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also found that the total number of policies and claim that need processing
+ affects the proportion of policy and claim assigned to a given employee.
+ The table below shows this effect, where we assumed that there are 50,000
+ policies and 10,000 claims need processing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Employee
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of Policies
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Number of Claims
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Processing Time (min)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26210
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+262128 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17462
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+262128
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6328
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9990
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+262084
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Project Complition Time:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+262128 Minutes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Finite number of policies and claims solution given 50,000 and 10,000, respectiv
+ely, policies and claims needs processing.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset label
+LatexCommand label
+name "table:finitestep50,000solution"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2244,6 +2786,24 @@ name "table:employeetrainingesolutions"
 \end_layout
 
 \begin_layout Standard
+One could wonder, how the makespan would be different if the percent increase
+ in efficiency of the trained employees is not 10% but maybe it is 5% or
+ 20%.
+ To investigate this scenario, we computed the makespan for decrease in
+ average processing time of 0% to 20% for each employee, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "figure:Makespanasfuntionofpercentdecreaseinoneofemployeesaveragetime"
+
+\end_inset
+
+.
+ From the plot, the insurance company would be better of to select employee
+ 1 for training if the decrease in processing time is just over 2%.
+ Otherwise, the company would be better of to train employee 3.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2265,9 +2825,10 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Minimum time as a function of percent increased in productivity of one of
- the employees.
- Red, blue, and black represent workers 1, 2, and 3 respectively.
+Minimum makespan as a function of percent decrease in average processing
+ time of the employees undergoing training.
+ The three lines represent the scenarios that only the given employee is
+ selected to be trained.
 \end_layout
 
 \end_inset
@@ -2275,7 +2836,7 @@ Minimum time as a function of percent increased in productivity of one of
 
 \begin_inset CommandInset label
 LatexCommand label
-name "figure:minimumtimeasfunctioofproductivity"
+name "figure:Makespanasfuntionofpercentdecreaseinoneofemployeesaveragetime"
 
 \end_inset
 
@@ -2285,6 +2846,562 @@ name "figure:minimumtimeasfunctioofproductivity"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Worker’s Happiness 
+\end_layout
+
+\begin_layout Standard
+Another approach that we looked at is the change in productivity as a result
+ from an increase in worker’s “happiness”.
+ This could be achieved by ensuring every worker has the chance of sharing
+ their ideas during meetings that allow workers to offer their input on
+ changes and policies.
+ Research has shown that engaged employees tend to perform better on the
+ job as compared to workers that have no feeling of contribution to the
+ company.
+ In a pronounced company like Google, worker satisfaction is crucial to
+ its company’s success as they focus on implementing complementary provided
+ services, for instance; breakfast, health coverage, gym access, on-site
+ physician, etc.
+ .
+ “Obviously, all these perks come at a cost for Google.
+ But so does employee dissatisfaction and high turnover”.
+ (http://blog.kissmetrics.com/googles-culture-of-success/) Looking at this
+ perspective, we can see that it may also be the right approach to spend
+ a little additional money to ensure that workers are satisfied and motivated
+ to work hard and remain productive.
+\end_layout
+
+\begin_layout Standard
+This problem could be modelled by first gathering preliminary statistics
+ such as by how much an average employees productivity would increase as
+ a result of implementation of of some employee incentive programs, such
+ as free lunch, coffee, etc.
+ As we don't have access to such information, let's assume that average
+ processing time for each application by each employee decreases by 10%.
+ In fact, since the basic model that we solved would yield the same result
+ if the relative average processing time of employees stay unchanged, therefore
+ lets assume that the increased productivity happens only for the processing
+ policies.
+ Maybe we found that it is easier to improve in this region as policies
+ result in revenue while claims cost the insurance company money.
+ Then, the problem would be the same as the basic model that needs to be
+ solved using the improvised processing time.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+New Policy
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Claim
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Employee 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10/1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+28
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Employee 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15/1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Employee 3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13/1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Average task processing time in minutes.
+ after implementation of employee incentive programs.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:Happiness-average-time"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The constrains for this model would be set as follows, while the objective
+ and methodology stays the same as the basic model.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}+p_{2}+p_{3}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+We must assign exactly all New Policy tasks
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{1}+q_{2}+q_{3}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+We must assign exactly all Claim tasks
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{10}{1.1}p_{1}+28q_{1}\leq t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ensure minimal makespan
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{15}{1.1}p_{2}+22q_{2}\leq t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ensure minimal makespan
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{13}{1.1}p_{3}+18q_{3}\leq t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ensure minimal makespan
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Happiness Model Constraints
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:Hapiness-constrain"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The optimized assignment strategy would be as follows, the the makespan
+ 
+\begin_inset Formula $t=\frac{3672}{379}\approx9.689$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+New Policy Assignments
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Claim Assignments
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{1}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{1}=\frac{89}{4169}\approx0.021$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{2}=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{2}=\frac{1836}{4169}\approx0.440$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p_{3}=0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q_{3}=\frac{204}{379}\approx0.538$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Optimal solution to the basic model
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "table:basicmodeloptimalsolution-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Generalized Parameters
+\end_layout
+
+\begin_layout Standard
+Oftentimes, parameters of a given problem, such as parameters in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:averagetimes"
+
+\end_inset
+
+, change overtime or it is possible that they are not free of uncertainties.
+ To investigate this scenario, we considered individual effects of each
+ parameter, one parameter at a time.
+ We varied each 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ between 0.9 to 1.1 times the provided value and computed the optimum task
+ division strategy.
+ The result of this long process was a series of plots of which 1 is illustrated
+ below.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -2294,7 +3411,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename images/TimeEvolutionAsPercentIncreaseInProductivityOfOneOfTheEmployee2.png
+	filename images/4.5.png
 	scale 40
 
 \end_inset
@@ -2306,7 +3423,15 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Closer look at 0% to 2% increase in claimed productivity.
+Portion of policies that worker 1 processes as a result in changes in 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -2314,7 +3439,7 @@ Closer look at 0% to 2% increase in claimed productivity.
 
 \begin_inset CommandInset label
 LatexCommand label
-name "figure:minimumtimeasfunctioofproductivity-1"
+name "figure:4.5-1"
 
 \end_inset
 
@@ -2324,6 +3449,50 @@ name "figure:minimumtimeasfunctioofproductivity-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The plot 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "figure:4.5-1"
+
+\end_inset
+
+ interprets as follows: employee 1 would process 99.4 % of the policies regardles
+s of 
+\begin_inset Formula $\pm10\%$
+\end_inset
+
+ changes in 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $p_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+, and 
+\begin_inset Formula $q_{3}$
+\end_inset
+
+.
+ On the contrary, if 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+(employee 2's claim processing average time) increases by more than 2.3%,
+ or then 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+decreases by more than 1%, the employee 1 would be processing all of the
+ policies.
+ IT DOESN'T MAKE SENSE
 \end_layout
 
 \begin_layout Section
@@ -2331,7 +3500,7 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-An enhanced model that would represent the real world should be a probabilistic
+An enhanced model that would represent the real world should be 1a probabilistic
  model rather than deterministic that would take into account employee's
  sick and vacation time...
 \end_layout
@@ -2341,10 +3510,6 @@ From our analysis, the insurance company would achieve the best outcome
  by allocating their limited professional development budget towards Employee
  3, whose improvement would have the greatest positive impact on task processing
  times.
-\end_layout
-
-\begin_layout Section
-Conclusions
 \end_layout
 
 \begin_layout Standard
@@ -2377,7 +3542,7 @@ name "sec:Appendix-A"
 \begin_layout Standard
 Rather than attach printed spreadsheets as an appendix, all of our project
  documents including spreadsheets, Maple source code, charts, and LaTeX
- files are available at 
+ files are available from our public repository, located at 
 \begin_inset CommandInset href
 LatexCommand href
 name "https://github.com/colefichter/math372_project_1"
