@@ -110,9 +110,9 @@ The problem of
 \emph on
 effectively
 \emph default
- allocating finite resources has been known for centuries.
- Certainly, as long as there have been functional economies (even systems
- as simple as barter networks) producers have been pressured to utilize
+ allocating finite resources has been tackeled for centuries.
+ Certainly, as long as there have been functional economies, even systems
+ as simple as barter networks, producers have been pressured to utilize
  labour, capital, and raw materials in the most efficient manner possible.
  More generally, there exist a class of problems known as Assignment Problems.
  
@@ -245,8 +245,8 @@ Blackett's Circus
 \begin_inset Quotes erd
 \end_inset
 
- had, while using science and mathematics to defeat the Nazis, created a
- new industry.
+ had created a new industry while using science and mathematics to defeat
+ the Nazis.
  They called it 
 \noun on
 operations research
@@ -443,7 +443,7 @@ Employee 3
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Average Task Processing Time (in minutes)
+Average task processing time in minutes.
 \end_layout
 
 \end_inset
@@ -470,7 +470,8 @@ The insurance company has compiled the timings above by empirical measurement.
  by the office employees.
  Under these circumstances, the insurance company is interested in assigning
  some fraction of the incoming tasks to each employee so as to minimize
- the makespan, or the elapsed time required to finish all of the tasks.
+ the makespan, or the elapsed time required to finish all of the tasks,
+ while maintaing the ratio of New Policy and Claim constant.
 \end_layout
 
 \begin_layout Subsection
@@ -483,7 +484,7 @@ To answer the question
 \end_inset
 
 how should the insurance company assign tasks to its employees to minimize
- the makespan (or elapsed time)?
+ the makespan?
 \begin_inset Quotes erd
 \end_inset
 
@@ -496,8 +497,8 @@ how should the insurance company assign tasks to its employees to minimize
 \begin_inset Formula $q_{i}$
 \end_inset
 
-, the fraction of New Policy tasks and the fraction of Claim tasks (respectively
-) to be assigned to the 
+, the fraction of New Policy tasks and the fraction of Claim tasks, respectively
+, to be assigned to the 
 \begin_inset Formula $i^{th}$
 \end_inset
 
@@ -510,7 +511,8 @@ Our objective function is simply
 \begin_inset Formula $t$
 \end_inset
 
-, the elapsed time (in minutes) required to complete all of the tasks.
+, the elapsed time (in minutes) required to complete all of the tasks which
+ needs to be minimized.
 \end_layout
 
 \begin_layout Subsubsection
@@ -533,7 +535,7 @@ Variables
 \end_layout
 
 \begin_layout Standard
-We now formally define the model variables
+We formally define the model variables as follows:
 \end_layout
 
 \begin_layout Standard
@@ -649,7 +651,19 @@ Constraints
 
 \begin_layout Standard
 Since we are dealing with human employees and real-world tasks, we assume
- all trivial and non-negative constraints.
+ all trivial and non-negative constraints,
+\begin_inset Formula $q_{i}$
+\end_inset
+
+,
+\begin_inset Formula $t$
+\end_inset
+
+,
+\begin_inset Formula $p_{i}\geq0$
+\end_inset
+
+.
  For example, it would be rather foolish to assign a negative number of
  tasks to an employee for completion.
  Here we also define the non trivial constraints.
@@ -816,19 +830,19 @@ name "table:basicconstraints"
 \end_layout
 
 \begin_layout Standard
-The first two constraints ensure that all of our tasks get assigned.
- For obvious reasons, it would not be an optimal schedule to only assign
- a portion of, say, the New Policy tasks, since by definition the unassigned
- portion would not be completed.
- The final three constraints ensure that when we allocate tasks to each
- employee, each allocation falls below the same bounding value for elapsed
- time.
- By constraining the model in this manner, we ensure that no employee exceeds
- the elapsed time of his peers or the optimal elapsed time, 
-\begin_inset Formula $t$
+The first two constraints ensure that all the tasks would be processed by
+ am employee.
+ These constrains ensure that we would not end up with the theoretical,
+ trivial, unworthy solution 
+\begin_inset Formula $p_{i}=q_{i}=t=0$
 \end_inset
 
 .
+ In addition, any solution that does not satisfy the first two contrains
+ corresponds to the case where not all of the tasks are assigned to employees
+ and thus an unassigned portion of tasks would not be completed.
+ The remaining other three constraints ensure that no employee exceeds the
+ time requiered to complete all the tasks.
 \end_layout
 
 \begin_layout Subsubsection
@@ -836,11 +850,11 @@ The Objective Function
 \end_layout
 
 \begin_layout Standard
-Stated more precisely in mathematical terms, our question is 
+Stated more precisely in mathematical terms, our objective is to 
 \begin_inset Quotes eld
 \end_inset
 
-what values of 
+choose values of 
 \begin_inset Formula $p_{i}$
 \end_inset
 
@@ -855,23 +869,69 @@ reference "table:basicvariables"
 
 \end_inset
 
-) will minimize the objective function 
+) that will minimize the objective function 
 \begin_inset Formula $t$
 \end_inset
 
-, subject to all trivial constraints and all non-trivial constraints listed
- in Table 
+, subject to all trivial constraints,
+\begin_inset Formula $q_{i}$
+\end_inset
+
+,
+\begin_inset Formula $t$
+\end_inset
+
+,
+\begin_inset Formula $p_{i}\geq0$
+\end_inset
+
+, and all non-trivial constraints listed in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:basicconstraints"
 
 \end_inset
 
- ?
+.
 \begin_inset Quotes erd
 \end_inset
 
+ Since we are making no assumption on the number of policies and claims
+ that needs to be processes, therfore, the objective function 
+\begin_inset Formula $t$
+\end_inset
 
+ is not the same as the time in minutes requiered to complete all tasks.
+ In fact, since there is a steady, health, long (infinite) sequence of policies
+ and claims that needs to be processed, therefore it would take infinite
+ minutes to processess all the tasks.
+ On the positive side, the objective 
+\begin_inset Formula $t$
+\end_inset
+
+ corresponds to the best task assignment strategy that would minimized this
+ infinite time.
+ For lack of a better word, we will refer to
+\begin_inset Formula $t$
+\end_inset
+
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+makespan,
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+total time
+\begin_inset Quotes erd
+\end_inset
+
+ through out this report.
 \end_layout
 
 \begin_layout Section
@@ -879,9 +939,9 @@ Solving the Basic Employee Scheduling Model
 \end_layout
 
 \begin_layout Standard
-The basic model described above is well-suited to the Simplex Minimization
+The basic model described above is well-suited for the Simplex Minimization
  algorithm, and requires little modification.
- We set up and solved the model in a spreadsheet, seen here.
+ We set up and solved the model in a spreadsheet, seen below.
 \end_layout
 
 \begin_layout Standard
@@ -1065,7 +1125,7 @@ Claim Assignments
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Optimal Solution to the Basic Model
+Optimal solution to the basic model
 \end_layout
 
 \end_inset
@@ -1105,8 +1165,8 @@ Sensitivity Analysis
 \end_layout
 
 \begin_layout Standard
-From a sensitivity analysis prepared with the basic model solution, we see
- the shadow prices for our two most important constraints.
+From a sensitivity analysis obtained using excel's simplex Solver, we find,
+ as follows, the shadow prices for our two most important constraints.
 \end_layout
 
 \begin_layout Standard
@@ -1252,8 +1312,10 @@ Observations of the Basic Solution
 \end_layout
 
 \begin_layout Standard
-Our solution is only useful in the long-term.
- It wouldn't make sense to assign 0.6% of a single task to one employee.
+Our solution is only useful in the long-term where there is an infinite
+ sequence of tasks to be processed.
+ For example, it wouldn't make sense to assign 0.6% of a single task to one
+ employee and most often, as .
  In addition to being impractical, the cost of context-switching as the
  employees handed off the partially completed task would outweigh any potential
  time savings.
@@ -1279,28 +1341,44 @@ Criticism
 \end_layout
 
 \begin_layout Standard
-The basic employee scheduling model may have some flaws.
- First, it would be wise to ensure that the measured timings listed in Table
- 
+This basic employee task appointment strategy has multiple flaws.
+ Firstly, there is no information provided regarding the accuracy and methodolog
+y of the measured timings listed in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:averagetimes"
 
 \end_inset
 
- are truly accurate.
- How were they measured? Are they an accurate reflection of true employee
- work times?
-\end_layout
+.
+ Additionally, a linear approximation of employees' average processing time
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "table:averagetimes"
 
-\begin_layout Standard
-Next, it is very possible that a linear model, such as our basic model,
- is not an accurate representation of of real world worker productivity.
+\end_inset
+
+) , cannot be an accurate representation of of real world worker productivity
+ over a long period of time.
  For example, the authors believe that it is fairly unlikely that an employee's
  productivity would remain constraint throughout the day (let alone over
  weeks, months, or years).
  Our model does not take into account any aspect of productivity fluctuations
- caused by factors such as fatigue, boredom, enthusiasm, etc.
+ caused by factors such as fatigue, boredom, enthusiasm, learning over course
+ of time, etc.
+ 
+\end_layout
+
+\begin_layout Standard
+Additionally, The mdel does not take into account the ratio of policies
+ and claims that need to be processed.
+ It is very likely that the average number of policies and claims that need
+ to be processed annually are not the same.
+ For example, it it likly that there would be more policies that need to
+ be processed and fewer claims.
+ To further dig into the probable complexity of this problem, we investigate
+ some variation of this problem by introducing further or different constrains.
 \end_layout
 
 \begin_layout Standard
@@ -1316,6 +1394,7 @@ Enhanced Employee Scheduling Problems
 \begin_layout Standard
 The insurance company may be interested to learn how the Basic Solution
  reacts to other real-world conditions.
+ Here, we present 
 \end_layout
 
 \begin_layout Subsection
@@ -2245,6 +2324,16 @@ name "figure:minimumtimeasfunctioofproductivity-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+An enhanced model that would represent the real world should be a probabilistic
+ model rather than deterministic that would take into account employee's
+ sick and vacation time...
 \end_layout
 
 \begin_layout Standard
