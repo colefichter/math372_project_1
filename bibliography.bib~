@@ -27,7 +27,7 @@
  year = 2013,
  address = "Toronto"
 }
-@BOOK{Bulygo:2009:Online,
+@ONLINE{Bulygo:2009:Online,
 author = {Bulygo, Zach},
 title = {Inside Google's Culture of Success and Employee Happiness},
 year = {2013},

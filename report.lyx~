@@ -67,10 +67,36 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset FloatList table
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
 
 \end_inset
 
@@ -110,12 +136,11 @@ The problem of
 \emph on
 effectively
 \emph default
- allocating finite resources has been tackeled for centuries.
- Certainly, as long as there have been functional economies, even systems
- as simple as barter networks, producers have been pressured to utilize
+ allocating finite resources has been known for centuries.
+ Certainly, as long as there have been functional economies (even systems
+ as simple as barter networks) producers have been pressured to utilize
  labour, capital, and raw materials in the most efficient manner possible.
  More generally, there exist a class of problems known as Assignment Problems.
- 
 \end_layout
 
 \begin_layout Standard
@@ -183,8 +208,8 @@ th
 
 \end_inset
 
- century, however, a number of critical breakthroughs would begin to bring
- powerful mathematical techniques to the masses.
+ century, a number of critical breakthroughs began to bring powerful mathematica
+l techniques to the masses.
  Alan Turing had worked to design high-performance code-breaking analog
  computers and had invented what we now call software while 
 \begin_inset Quotes eld
@@ -298,7 +323,7 @@ In this paper, we examine an insurance office that handles two types of
  The office has three employees of varying skill levels, who each take different
  lengths of time (on average) to complete a given task.
  Here we see the average time (in minutes) required for each employee to
- complete each task type.
+ complete each task.
 \end_layout
 
 \begin_layout Standard
@@ -471,7 +496,7 @@ The insurance company has compiled the timings above by empirical measurement.
  Under these circumstances, the insurance company is interested in assigning
  some fraction of the incoming tasks to each employee so as to minimize
  the makespan, or the elapsed time required to finish all of the tasks,
- while maintaing the ratio of New Policy and Claim constant.
+ while maintain the ratio of New Policy and Claim constant.
 \end_layout
 
 \begin_layout Subsection
@@ -511,8 +536,7 @@ Our objective function is simply
 \begin_inset Formula $t$
 \end_inset
 
-, the elapsed time (in minutes) required to complete all of the tasks which
- needs to be minimized.
+, the elapsed time (in minutes) required to complete all of the tasks.
 \end_layout
 
 \begin_layout Subsubsection
@@ -651,7 +675,7 @@ Constraints
 
 \begin_layout Standard
 Since we are dealing with human employees and real-world tasks, we assume
- all trivial and non-negative constraints,
+ all trivial and non-negative constraints: 
 \begin_inset Formula $q_{i}$
 \end_inset
 
@@ -830,19 +854,28 @@ name "table:basicconstraints"
 \end_layout
 
 \begin_layout Standard
-The first two constraints ensure that all the tasks would be processed by
- am employee.
- These constrains ensure that we would not end up with the theoretical,
- trivial, unworthy solution 
+The first two constraints ensure that all of our tasks get assigned.
+ For obvious reasons, it would not be an optimal schedule to only assign
+ a portion of, say, the New Policy tasks since by definition the unassigned
+ portion would not be completed.
+ The final three constraints ensure that when we allocate tasks to each
+ employee, each allocation falls below the same bounding value for elapsed
+ time.
+ 
+\end_layout
+
+\begin_layout Standard
+By constraining the model in this manner, we ensure that no employee exceeds
+ the elapsed time of his peers or the optimal elapsed time, 
+\begin_inset Formula $t$
+\end_inset
+
+ and we disqualify the trivial solution 
 \begin_inset Formula $p_{i}=q_{i}=t=0$
 \end_inset
 
 .
- In addition, any solution that does not satisfy the first two contains
- corresponds to the case where not all of the tasks are assigned to employees
- and thus an unassigned portion of tasks would not be completed.
- The remaining other three constraints ensure that no employee exceeds the
- time required to complete all the tasks.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -873,7 +906,7 @@ reference "table:basicvariables"
 \begin_inset Formula $t$
 \end_inset
 
-, subject to all trivial constraints,
+, subject to all trivial constraints, 
 \begin_inset Formula $q_{i}$
 \end_inset
 
@@ -896,42 +929,7 @@ reference "table:basicconstraints"
 \begin_inset Quotes erd
 \end_inset
 
- Since we are making no assumption on the number of policies and claims
- that needs to be processes, therefore, the objective function 
-\begin_inset Formula $t$
-\end_inset
 
- is not the same as the time in minutes required to complete all tasks.
- In fact, since there is a steady, health, long (infinite) sequence of policies
- and claims that needs to be processed, therefore it would take infinite
- minutes to processes all the tasks.
- On the positive side, the objective 
-\begin_inset Formula $t$
-\end_inset
-
- corresponds to the best task assignment strategy that would minimized this
- infinite time.
- For lack of a better word, we will refer to
-\begin_inset Formula $t$
-\end_inset
-
- as 
-\begin_inset Quotes eld
-\end_inset
-
-makespan,
-\begin_inset Quotes erd
-\end_inset
-
- and 
-\begin_inset Quotes eld
-\end_inset
-
-total time
-\begin_inset Quotes erd
-\end_inset
-
- through out this report.
 \end_layout
 
 \begin_layout Section
@@ -941,7 +939,7 @@ Solving the Basic Employee Scheduling Model
 \begin_layout Standard
 The basic model described above is well-suited for the Simplex Minimization
  algorithm, and requires little modification.
- We set up and solved the model in a spreadsheet, seen below.
+ We set up and solved the model in a spreadsheet, seen here.
 \end_layout
 
 \begin_layout Standard
@@ -1165,8 +1163,8 @@ Sensitivity Analysis
 \end_layout
 
 \begin_layout Standard
-From a sensitivity analysis obtained using Excel’s simplex Solver, we find,
- as follows, the shadow prices for our two most important constraints.
+From a sensitivity analysis obtained using Excel’s simplex Solver, we see
+ here the shadow prices for our two most important constraints.
 \end_layout
 
 \begin_layout Standard
@@ -1174,7 +1172,7 @@ From a sensitivity analysis obtained using Excel’s simplex Solver, we find,
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1312,10 +1310,10 @@ Observations of the Basic Solution
 \end_layout
 
 \begin_layout Standard
-Our solution is only useful in the long-term where there is an infinite
- sequence of tasks to be processed.
+Our solution is only useful in the long-term where there is a long sequence
+ of tasks to be processed.
  For example, it wouldn't make sense to assign 0.6% of a single task to one
- employee and most often, as .
+ employee.
  In addition to being impractical, the cost of context-switching as the
  employees handed off the partially completed task would outweigh any potential
  time savings.
@@ -1341,9 +1339,9 @@ Criticism
 \end_layout
 
 \begin_layout Standard
-This basic employee task appointment strategy has multiple flaws.
- Firstly, there is no information provided regarding the accuracy and methodolog
-y of the measured timings listed in Table 
+This basic employee task assignment strategy has multiple flaws.
+ First, there is no information provided regarding the accuracy and methodology
+ of the measured timings listed in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:averagetimes"
@@ -1351,40 +1349,40 @@ reference "table:averagetimes"
 \end_inset
 
 .
- Additionally, a linear approximation of employee’s average processing time
- (
+ Additionally, a linear approximation of the employees' average processing
+ time (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:averagetimes"
 
 \end_inset
 
-) , cannot be an accurate representation of of real world worker productivity
- over a long period of time.
- For example, the authors believe that it is fairly unlikely that an employee's
- productivity would remain constraint throughout the day (let alone over
- weeks, months, or years).
+) cannot be an accurate representation of real-world worker productivity
+ over the long term.
+ For example, the authors believe that it is unlikely that an employee's
+ productivity would remain constant throughout the day (let alone over weeks,
+ months, or years).
  Our model does not take into account any aspect of productivity fluctuations
  caused by factors such as fatigue, boredom, enthusiasm, learning over course
  of time, etc.
- 
+ The authors also wonder whether such a scheduling strategy could foster
+ animosity and politics between the employees.
+ We leave this as an open question for the reader.
 \end_layout
 
 \begin_layout Standard
 Additionally, the model does not take into account the ratio of policies
  and claims that need to be processed and assumes that there are an infinite
- number of policies and claims at any given time that needs processing.
+ number of policies and claims waiting at any given time.
  It is very likely that the average number of policies and claims that need
  to be processed annually are not the same, for example, there could be
  more policies that need to be processed and fewer claims.
  This means that the task division may not truly lead to the best strategy
  for the given insurance company.
  To further dig into the probable complexity of this problem, we investigate
- some variation of this problem by introducing further or different constrains
+ some variation of this problem by introducing further or different constraints
  and parameters.
- The authors also wonder whether such a scheduling strategy could foster
- animosity and politics between the employees.
- We leave this as an open question for the reader.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1394,7 +1392,7 @@ Enhanced Employee Scheduling Problems
 \begin_layout Standard
 The insurance company may be interested to learn how the Basic Solution
  reacts to other real-world conditions.
- Here, we present 
+ Here, we present some augmented models to address other scenarios.
 \end_layout
 
 \begin_layout Subsection
@@ -1402,25 +1400,23 @@ Finite Number of Policies and Claims
 \end_layout
 
 \begin_layout Standard
-Oftentimes, companies contract projects that would be finished after a finite
- steps.
- For example, we could consider the scenario that the insurance company
- contracted processing 500 new policies and 100 claims.
- To solve this model, in addition to the constrains in table 
+Consider the scenario in which the insurance company signs a contract to
+ process 500 new policies and 100 claims.
+ To solve this model, in addition to the constrains in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:basicconstraints"
 
 \end_inset
 
- and 
+ and Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:averagetimes"
 
 \end_inset
 
-we have included the following constrains:
+ we have included the constraints 
 \begin_inset Formula $p_{i}$
 \end_inset
 
@@ -1428,14 +1424,14 @@ we have included the following constrains:
 \begin_inset Formula $q_{i}\in\mathbb{\mathbb{N}}$
 \end_inset
 
- and replaced the first two conditions in 
+ and replaced the first two conditions in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:basicvariables"
 
 \end_inset
 
-with 
+ with 
 \begin_inset Formula $p_{1}+p_{2}+p_{3}=500$
 \end_inset
 
@@ -1448,12 +1444,13 @@ with
 
 \begin_layout Standard
 \begin_inset Float table
-placement h
+placement H
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 
 \lang english
 \begin_inset Tabular
@@ -1629,7 +1626,7 @@ Processing Time (min)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Project
+
 \end_layout
 
 \end_inset
@@ -1638,7 +1635,7 @@ Project
 \begin_inset Text
 
 \begin_layout Plain Layout
-Complition Time:
+Project Completion Time:
 \end_layout
 
 \end_inset
@@ -1665,7 +1662,7 @@ Complition Time:
 
 \begin_layout Plain Layout
 Finite number of policies and claims solution given 500 and 100, respectively,
- policies and claims needs processing.
+ policies and claims need processing
 \end_layout
 
 \end_inset
@@ -1690,10 +1687,10 @@ name "table:finitestep500solution"
 \end_layout
 
 \begin_layout Standard
-We also found that the total number of policies and claim that need processing
- affects the proportion of policy and claim assigned to a given employee.
+We also found that the total number of policies and claims that need processing
+ affects the proportion of policies and claims assigned to a given employee.
  The table below shows this effect, where we assumed that there are 50,000
- policies and 10,000 claims need processing.
+ policies and 10,000 claims that need to be processed.
 \end_layout
 
 \begin_layout Standard
@@ -1701,9 +1698,10 @@ We also found that the total number of policies and claim that need processing
 placement h
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
+\align center
 
 \lang english
 \begin_inset Tabular
@@ -1888,7 +1886,7 @@ Processing Time (min)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Project Complition Time:
+Project Completion Time:
 \end_layout
 
 \end_inset
@@ -1915,7 +1913,7 @@ Project Complition Time:
 
 \begin_layout Plain Layout
 Finite number of policies and claims solution given 50,000 and 10,000, respectiv
-ely, policies and claims needs processing.
+ely, policies and claims needs processing
 \end_layout
 
 \end_inset
@@ -2232,7 +2230,7 @@ While sick time for any of the employees has a clear negative impact on
 , whereas when Employee 2 is ill we see that the overall impact is comparatively
  low.
  Thus, from the insurance company's point of view, if any one employee should
- get sick, it would be preferable that employee 2 becomes ill.
+ get sick, it would be preferable that Employee 2 becomes ill.
  Therefore, management could mitigate the risk, at the least cost, by offering
  only Employees 1 and 3 extra preventative health care coverage such as
  seasonal flu vaccinations.
@@ -2254,10 +2252,9 @@ Employee Training
 \end_layout
 
 \begin_layout Standard
-Oftentimes, companies train their employees to increase efficiency and productiv
-ity.
- Moreover, since professional development budgets are often limited, the
- company may wish to offer training to only a subset of its employees.
+Companies often train their employees to increase efficiency and productivity.
+ Moreover, since professional development budgets are typically limited,
+ the company may wish to offer training to only a subset of its employees.
  To model a similar problem for our insurance company, we assume that the
  company has a budget for training only one of its employees with the aim
  still to reduce the total time needed to complete New Policy and Claim
@@ -2276,14 +2273,14 @@ Percent increased efficiency of a given employee depends on the learning
  same linear learning curve and that the curriculum would be the same for
  all employees.
  This assumption seems reasonable since there are few quantitative metrics
- available that would measure an individuals potential suitability to a
+ available that would measure an individual's potential suitability to a
  training program.
 \end_layout
 
 \begin_layout Standard
 As a result, it is reasonable to conclude that no matter which employee
  is chosen, the employee would become more efficient by the same percentage.
- Let’s assume that an employee would become 10% more efficient upon completion
+ We assume that an employee would become 10% more efficient upon completion
  of the training.
  
 \end_layout
@@ -2463,7 +2460,7 @@ Claims
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Revised task processing time (in minutes) for the selected employee
+Revised Task Processing Time in Minutes for Each Employee
 \end_layout
 
 \end_inset
@@ -2786,11 +2783,10 @@ name "table:employeetrainingesolutions"
 \end_layout
 
 \begin_layout Standard
-One could wonder, how the makespan would be different if the percent increase
- in efficiency of the trained employees is not 10% but maybe it is 5% or
- 20%.
+One could wonder how the makespan would be different if the percent increase
+ in efficiency of the trained employees is not 10%.
  To investigate this scenario, we computed the makespan for decrease in
- average processing time of 0% to 20% for each employee, see 
+ average processing time of 0% to 20% for each employee, see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "figure:Makespanasfuntionofpercentdecreaseinoneofemployeesaveragetime"
@@ -2798,9 +2794,9 @@ reference "figure:Makespanasfuntionofpercentdecreaseinoneofemployeesaveragetime"
 \end_inset
 
 .
- From the plot, the insurance company would be better of to select employee
+ From the plot, the insurance company would be better off to select Employee
  1 for training if the decrease in processing time is just over 2%.
- Otherwise, the company would be better of to train employee 3.
+ Otherwise, the company would be better of to train Employee 3.
 \end_layout
 
 \begin_layout Standard
@@ -2825,10 +2821,8 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Minimum makespan as a function of percent decrease in average processing
- time of the employees undergoing training.
- The three lines represent the scenarios that only the given employee is
- selected to be trained.
+Minimum Makespan as a Function of Percent Decrease in Average Processing
+ Time for Each Trained Employee
 \end_layout
 
 \end_inset
@@ -2848,47 +2842,59 @@ name "figure:Makespanasfuntionofpercentdecreaseinoneofemployeesaveragetime"
 
 \end_layout
 
+\begin_layout Standard
+From our analysis, the insurance company would achieve the best outcome,
+ in the face of uncertain metrics, by allocating their limited professional
+ development budget towards Employee 3, whose improvement would likely have
+ the greatest positive impact on task processing times.
+\end_layout
+
 \begin_layout Subsection
-Worker’s Happiness 
+Worker Happiness 
 \end_layout
 
 \begin_layout Standard
-Another approach that we looked at is the change in productivity as a result
- from an increase in worker’s “happiness”.
+Another approach that we looked at is the change in productivity due to
+ an increase in worker happiness.
  This could be achieved by ensuring every worker has the chance of sharing
  their ideas during meetings that allow workers to offer their input on
  changes and policies.
  Research has shown that engaged employees tend to perform better on the
  job as compared to workers that have no feeling of contribution to the
  company.
- In a pronounced company like Google, worker satisfaction is crucial to
- its company’s success as they focus on implementing complementary provided
- services, for instance; breakfast, health coverage, gym access, on-site
- physician, etc.
- .
+ For example, Google considers worker satisfaction to be crucial to its
+ success.
+ As a result, the company provides many benefits and perks such as free
+ meals, health coverage, daycare, gym access, on-site physician, and many
+ more.
  “Obviously, all these perks come at a cost for Google.
- But so does employee dissatisfaction and high turnover”.
- (http://blog.kissmetrics.com/googles-culture-of-success/) Looking at this
- perspective, we can see that it may also be the right approach to spend
- a little additional money to ensure that workers are satisfied and motivated
- to work hard and remain productive.
+ But so does employee dissatisfaction and high turnover”
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bulygo:2009:Online"
+
+\end_inset
+
+.
+ Looking at this perspective, we can see that it may also be the right approach
+ to spend a little additional money to ensure that workers are satisfied
+ and motivated to work hard and remain productive.
 \end_layout
 
 \begin_layout Standard
 This problem could be modelled by first gathering preliminary statistics
- such as by how much an average employees productivity would increase as
+ such as by how much an average employee's productivity would increase as
  a result of implementation of of some employee incentive programs, such
- as free lunch, coffee, etc.
+ as offering free lunch.
  As we don't have access to such information, let's assume that average
  processing time for each application by each employee decreases by 10%.
- In fact, since the basic model that we solved would yield the same result
- if the relative average processing time of employees stay unchanged, therefore
- lets assume that the increased productivity happens only for the processing
- policies.
- Maybe we found that it is easier to improve in this region as policies
+ Since the Basic Model that we solved would yield the same result if the
+ relative average processing time of employees stay unchanged, we assume
+ that the increased productivity affects only the average time to process
+ New Policy tasks.
+ Perhaps we found that it is easier to improve in this area as policies
  result in revenue while claims cost the insurance company money.
- Then, the problem would be the same as the basic model that needs to be
- solved using the improvised processing time.
+ Here we see the adjusted processing times.
  
 \end_layout
 
@@ -2950,7 +2956,10 @@ Employee 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-10/1.1
+\begin_inset Formula $10/1.1\approx9.09$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2959,7 +2968,10 @@ Employee 1
 \begin_inset Text
 
 \begin_layout Plain Layout
-28
+\begin_inset Formula $28$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2979,7 +2991,10 @@ Employee 2
 \begin_inset Text
 
 \begin_layout Plain Layout
-15/1.1
+\begin_inset Formula $15/1.1\approx13.64$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2988,7 +3003,10 @@ Employee 2
 \begin_inset Text
 
 \begin_layout Plain Layout
-22
+\begin_inset Formula $22$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3008,7 +3026,10 @@ Employee 3
 \begin_inset Text
 
 \begin_layout Plain Layout
-13/1.1
+\begin_inset Formula $13/1.1\approx11.82$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3017,7 +3038,10 @@ Employee 3
 \begin_inset Text
 
 \begin_layout Plain Layout
-18
+\begin_inset Formula $18$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3034,8 +3058,8 @@ Employee 3
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Average task processing time in minutes.
- after implementation of employee incentive programs.
+Average Task Processing Time in Minutes After Implementation of Employee
+ Incentive Programs
 \end_layout
 
 \end_inset
@@ -3056,8 +3080,8 @@ name "table:Happiness-average-time"
 \end_layout
 
 \begin_layout Standard
-The constrains for this model would be set as follows, while the objective
- and methodology stays the same as the basic model.
+The constraints for this model would be set as follows, while the objective
+ function and methodology are the same as in the Basic Model.
 \end_layout
 
 \begin_layout Standard
@@ -3200,7 +3224,7 @@ Ensure minimal makespan
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Happiness Model Constraints
+Constraints for the Worker Happiness Model
 \end_layout
 
 \end_inset
@@ -3221,8 +3245,8 @@ name "table:Hapiness-constrain"
 \end_layout
 
 \begin_layout Standard
-The optimized assignment strategy would be as follows, the the makespan
- 
+The optimized assignment strategy would be as follows, resulting in the
+ makespan 
 \begin_inset Formula $t=\frac{3672}{379}\approx9.689$
 \end_inset
 
@@ -3352,7 +3376,7 @@ Claim Assignments
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Optimal solution to the basic model
+Optimal solution to the Worker Happiness Model
 \end_layout
 
 \end_inset
@@ -3372,19 +3396,24 @@ name "table:basicmodeloptimalsolution-1"
 
 \end_layout
 
+\begin_layout Standard
+As expected, intiatives that reduce the makespan of the optimal task assignment
+ schedule would be beneficial to the insurance company.
+\end_layout
+
 \begin_layout Subsection
 Generalized Parameters
 \end_layout
 
 \begin_layout Standard
-Oftentimes, parameters of a given problem, such as parameters in 
+Parameters of a given problem, such as parameters in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "table:averagetimes"
 
 \end_inset
 
-, change overtime or it is possible that they are not free of uncertainties.
+, may change over time or may be subject to uncertainty.
  To investigate this scenario, we considered individual effects of each
  parameter, one parameter at a time.
  We varied each 
@@ -3423,7 +3452,7 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Portion of policies that worker 1 processes as a result in changes in 
+Portion of Policies That Employee 1 Processes Due to Changes in 
 \begin_inset Formula $p_{i}$
 \end_inset
 
@@ -3431,7 +3460,7 @@ Portion of policies that worker 1 processes as a result in changes in
 \begin_inset Formula $q_{i}$
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -3452,15 +3481,15 @@ name "figure:4.5-1"
 \end_layout
 
 \begin_layout Standard
-The plot 
+The plot in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "figure:4.5-1"
 
 \end_inset
 
- interprets as follows: employee 1 would process 99.4 % of the policies regardles
-s of 
+ can be interpreted as follows: Employee 1 would process 99.4 % of the policies
+ regardless of 
 \begin_inset Formula $\pm10\%$
 \end_inset
 
@@ -3481,18 +3510,17 @@ s of
 \end_inset
 
 .
- On the contrary, if 
+ If 
 \begin_inset Formula $q_{2}$
 \end_inset
 
-(employee 2's claim processing average time) increases by more than 2.3%,
- or then 
+(Employee 2's claim processing average time) increases by more than 2.3%,
+ or 
 \begin_inset Formula $p_{1}$
 \end_inset
 
-decreases by more than 1%, the employee 1 would be processing all of the
+decreases by more than 1%, then Employee 1 would be processing all of the
  policies.
- IT DOESN'T MAKE SENSE
 \end_layout
 
 \begin_layout Section
@@ -3500,16 +3528,31 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-An enhanced model that would represent the real world should be 1a probabilistic
- model rather than deterministic that would take into account employee's
- sick and vacation time...
+In this paper, we derived a solution to the basic employee task scheduling
+ problem, a specialized case from the class of resource allocation problems.
+ We showed that the insurance company can achieve a substantial improvement
+ in productivity by thoughtfully assigning tasks to each employee.
+ We also cautioned that our model may have flaws, and suggested that the
+ insurance company perform further research before implementing a strategy.
 \end_layout
 
 \begin_layout Standard
-From our analysis, the insurance company would achieve the best outcome
- by allocating their limited professional development budget towards Employee
- 3, whose improvement would have the greatest positive impact on task processing
- times.
+We then investigated more specialized cases of the assignment problem, taking
+ into account factors such as fluctuations in the ratio of task types in
+ the workload, employee sick time, training and professional development,
+ and work happiness.
+ Here, again, we cautioned that a truly complete scheduling model must take
+ into account complicating factors that are likely to arise in the real
+ world.
+\end_layout
+
+\begin_layout Standard
+Regardless of the extra complexity and uncertainty, the insurance office
+ has stumbled upon a problem whose solution has both interesting and practical
+ consequences.
+ We recommend that they continue to investigate the problem, since we believe
+ that it is highly likely that an effective and efficient solution can be
+ found and implemented.
 \end_layout
 
 \begin_layout Standard
@@ -3542,7 +3585,7 @@ name "sec:Appendix-A"
 \begin_layout Standard
 Rather than attach printed spreadsheets as an appendix, all of our project
  documents including spreadsheets, Maple source code, charts, and LaTeX
- files are available from our public repository, located at 
+ files are available at 
 \begin_inset CommandInset href
 LatexCommand href
 name "https://github.com/colefichter/math372_project_1"
